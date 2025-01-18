@@ -27,6 +27,11 @@
 *.lib
 
 # Executables
+build/
 *.exe
 *.out
 *.app
+
+# LSP
+.cache
+compile_commands.json
