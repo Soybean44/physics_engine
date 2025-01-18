@@ -1,26 +1,30 @@
 // Include the Raylib header file
+#include "ball.hpp"
 #include <raylib.h>
 
 int main() {
-  // Initialize the Raylib window
-  InitWindow(800, 600, "Hello World");
+  InitWindow(1000, 1000, "Hello World");
 
-  // Main game loop
+  Ball ball(Vector2{500.0f, 500.0f});
+
+  SetTargetFPS(60);
+
   while (!WindowShouldClose()) {
-    // Begin drawing
+    // Update
+
+    ball.update();
+
+    // Draw
+
     BeginDrawing();
 
-    // Clear the background
-    ClearBackground(RAYWHITE);
+    ClearBackground(SKYBLUE);
 
-    // Draw the "Hello World" text
-    DrawText("Hello, World!", 300, 280, 40, LIGHTGRAY);
+    ball.draw();
 
-    // End drawing
     EndDrawing();
   }
 
-  // Close the window
   CloseWindow();
 
   return 0;
